@@ -1,0 +1,80 @@
+
+/* CUSTOM PROPERTIES */
+
+:root {
+    /* PRIMITVE PROPERTIES */
+
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-blue: hsl(232, 58%, 55%);
+    --clr-dark-grey: hsl(233, 14%, 25%);
+    --clr-magenta: hsl(320, 85%, 41%);
+    --clr-aqua: hsl(180, 100%, 42%);
+    --clr-yellow: hsl(50, 99%, 53%);
+
+    --ff-sans-serif: 'Source Sans 3', sans-serif;
+    --fw-400: 400;
+    --fw-700: 700;
+
+    --size-10: .625rem;
+    --size-12: .75rem;
+    --size-14: .875rem;
+    --size-16: 1rem;
+    --size-18: 1.125rem;
+    --size-20: 1.25rem;
+    --size-22: 1.375rem;
+    --size-24: 1.5rem;
+    --size-28: 1.75rem;
+    --size-36: 2.25rem;
+    --size-40: 2.5rem;
+    --size-42: 2.625rem;
+    --size-44: 2.75rem;
+    --size-48: 3rem;
+    --size-60: 3.75rem;
+    --size-72: 4.5rem;
+    --size-80: 5rem;
+    --size-120: 7.5rem;
+
+    /* SEMANTIC PROPERTIES */
+
+    --bg-1: var(--clr-white);
+    --bg-2: var(--clr-blue);
+    --bg-3: var(--clr-magenta);
+    --clr-accent-100: var(--clr-aqua);
+    --clr-accent-200: var(--clr-magenta);
+    --clr-dark: var(--clr-dark-grey);
+    --clr-light: var(--clr-white);
+    --gradient-1: var(--clr-dark-grey);
+    --gradient-2: var(--clr-blue);
+    --gradient-3: var(--clr-aqua);
+    --gradient-4: var(--clr-yellow);
+
+    --ff-primary: var(--ff-sans-serif);
+
+    --fs-100: var(--size-14);
+    --fs-200: var(--size-16);
+    --fs-300: var(--size-18);
+    --fs-400: var(--size-20);
+    --fs-500: var(--size-22);
+    --fs-600: var(--size-24);
+    --fs-700: var(--size-28);
+    --fs-800: var(--size-36);
+    --fs-900: var(--size-40);
+    --fs-1000: var(--size-42);
+    --fs-1100: var(--size-44);
+    --fs-1200: var(--size-48);
+    --fs-1300: var(--size-72);
+
+    --fw-regular: var(--fw-400);
+    --fw-bold: var(--fw-700);
+
+    --space-100: var(--size-10);
+    --space-200: var(--size-12);
+    --space-300: var(--size-14);
+    --space-400: var(--size-16);
+    --space-500: var(--size-20);
+    --space-600: var(--size-24);
+    --space-700: var(--size-40); 
+    --space-800: var(--size-60);
+    --space-900: var(--size-80);
+    --space-1000: var(--size-120);
+}

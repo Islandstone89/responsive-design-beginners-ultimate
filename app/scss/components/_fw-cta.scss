@@ -1,0 +1,62 @@
+
+@use '../globals/utilities' as u;
+@use '../globals/variables' as var;
+
+.fw-cta {
+    text-align: center;
+    background: linear-gradient(90deg, var(--gradient-1) 0%, var(--gradient-2) 75%, var(--gradient-3) 150%);
+
+    @include u.breakpoint(large) {
+        background: linear-gradient(90deg, var(--gradient-1) 0%, var(--gradient-2) 55%, var(--gradient-3) 110%);
+    }
+}
+
+.fw-cta__text {
+    font-size: clamp(var(--fs-600), 1.43rem + 0.35vw, var(--fs-700));
+}
+
+.form {
+    --flow-space: var(--space-700);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-500);
+
+    @include u.breakpoint(medium) {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.form__input__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-200);
+}
+
+.form__label {
+    font-size: var(--fs-300);
+    text-align: initial;
+}
+
+.form__input {
+    border-radius: 5px;
+    padding: var(--space-200) var(--space-500);
+    border: transparent;
+}
+
+ .form__button {
+    @include u.btn(transparent, var(--clr-light), var(--clr-dark));
+    font-size: var(--fs-300);
+    cursor: pointer;
+    align-self: center;
+    border: transparent;
+
+    &:is(:hover, :focus-visible) {
+        opacity: .9;
+    }
+
+    @include u.breakpoint(medium) {
+        align-self: flex-end;
+    }
+ }

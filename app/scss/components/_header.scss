@@ -1,0 +1,123 @@
+
+@use '../globals/utilities' as u;
+@use '../globals/fonts' as font;
+
+.skip-link {
+    background-color: transparent;
+    padding: .5em 1em;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    &:not(:focus, :active) {
+    clip-path: inset(50%);
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    }
+}
+
+.header {
+    background-color: var(--bg-2);
+    font-size: clamp(var(--fs-100), 0.84rem + 0.18vw, var(--fs-200));
+    letter-spacing: .05em;
+
+    @include u.breakpoint(large) {
+        text-transform: uppercase;
+    }
+}
+
+.logo {
+    width: 4.375rem;
+
+    @include u.breakpoint(large) {
+        width: 8rem;
+    }
+
+    &:is(:hover) {
+        opacity: .9;
+        transition: ease-in .25s;
+    }
+}
+
+.header__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: var(--space-500);
+}
+
+.header__link {
+    display: none;
+}
+
+.navbar__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    @include u.breakpoint(large) {
+        flex-direction: row;
+        gap: 40px;
+    }
+}
+
+.navbar__link {
+    
+    &::after {
+        content: "";
+        display: none;
+        height: 3px;
+        background: linear-gradient(to right, var(--gradient-3), var(--gradient-4) 80%);
+        opacity: 0;
+        transition: ease-in .25s;
+
+        @include u.breakpoint(large) {
+            display: block;
+        }
+    }
+
+    &:is(:hover, :focus-visible)::after {
+        opacity: 1;
+    }
+}
+
+.navbar__menu {
+    position: fixed;
+    inset: 0 0 auto auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1000);
+    width: 100%;
+    background-color: var(--bg-2);
+    padding: var(--space-200) var(--space-600) var(--space-1000);
+    border-radius: 0 0 20px;
+    outline: 2px solid red;
+}
+
+:is(.navbar__menu__open, .navbar__menu__close) {
+    background-color: transparent;
+    border: transparent;
+    padding: 0;
+}
+
+.navbar__menu__open {
+    display: none;
+}
+
+.navbar__menu__close {
+   margin-inline-start: auto;
+}
+
+
+
+.home-link {
+    @include u.breakpoint(large) {
+        display: none;
+    }
+}

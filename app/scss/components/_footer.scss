@@ -1,0 +1,60 @@
+
+@use '../globals/utilities' as u;
+@use '../globals/variables' as var;
+
+.footer__logo__text {
+    font-size: var(--fs-300);
+}
+
+.footer__menu {
+    --flow-space: var(--space-700);
+
+    --columns: 1fr 1fr;
+    --grid-column-gap: var(--space-500);
+    --grid-row-gap: var(--space-700);
+    display: grid;
+    grid-template-columns: var(--columns);
+    column-gap: var(--grid-column-gap);
+    row-gap: var(--grid-row-gap);
+    
+
+    @include u.breakpoint(large) {
+        --columns: 1fr 1fr 1fr 1fr;
+        --grid-column-gap: var(--space-800);
+        --grid-row-gap: 0;
+    }
+}
+
+.footer__menu__column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-300);
+}
+
+.footer__menu__heading {
+    font-size: var(--fs-500);
+}
+
+.footer__menu__items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-100);
+}
+
+.footer__menu__item {
+    font-size: var(--fs-300);
+}
+
+.footer__menu__link {
+    transition: ease-in-out .25s;
+    &:is(:hover, :focus-visible) {
+        color: blue;
+    }
+
+}
+
+.footer__menu__link:has(svg) {
+    display: flex;
+    align-items: center;
+    gap: var(--space-400);
+}

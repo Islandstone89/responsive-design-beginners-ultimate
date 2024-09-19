@@ -1,0 +1,69 @@
+
+/* UTILITIES */
+
+/* MIXINS */
+
+$breakpoints: (
+    "medium": 43.75rem,
+    "large": 56.25rem,
+    "xlarge": 68.75rem,
+    "xxlarge": 90rem,
+);
+
+@mixin breakpoint($size) {
+    @media (width > map-get($breakpoints, $size)) {
+        @content;
+    }
+}
+
+
+@mixin btn($outline-color: var(--clr-light), $bg-color: transparent, $color: var(--clr-light)) {
+    --padding-block: var(--space-200);
+    --padding-inline: var(--space-400);
+    background-color: $bg-color;
+    color: $color;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    padding: var(--padding-block) var(--padding-inline);
+    border-radius: 20px;
+    outline: 2px solid $outline-color;
+    font-weight: var(--fw-bold);
+    transition: ease-in-out .25s;
+}
+
+.visually-hidden {
+    clip-path: inset(50%);
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+}
+
+.wrapper {
+    --max-width: 75rem;
+    --padding-inline: var(--space-300);
+    --padding-block: var(--space-800);
+    width: min(100% - var(--padding-inline) * 2, var(--max-width));
+    margin-inline: auto;
+    padding-block: var(--padding-block);
+
+    @include breakpoint(medium) {
+        --padding-inline: var(--space-600);
+        --padding-block: var(--space-900);
+    }
+}
+
+.flow {
+    --flow-space: var(--space-500);
+}
+
+.flow > * + * {
+    margin-block-start: var(--flow-space, 1rem);
+}
+
+.light {
+    color: var(--clr-light);
+}
+
+

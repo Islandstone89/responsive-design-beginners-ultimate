@@ -1,0 +1,88 @@
+
+@use '_utilities.scss' as u;
+@use '_fonts.scss' as font;
+
+/* BASE STYLES */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-200);
+    font-weight: var(--fw-regular);
+    background-color: var(--background-color);
+    color: var(--clr-dark);
+    position: relative;
+}
+
+:is(h1, h2, h3) {
+    font-weight: var(--fw-bold);
+}
+
+h1 {
+    font-size: clamp(var(--fs-1000), 1.94rem + 3.40vw, var(--fs-1300));
+}
+
+h2 {
+    font-size: clamp(var(--fs-800), 1.97rem + 1.38vw, var(--fs-1200));
+}
+
+:is(label, input) {
+    display: block;
+}
+
+/* .btn {
+    --outline-clr: var(--clr-light);
+    --bg-clr: transparent;
+    --padding-block: var(--space-200);
+    --padding-inline: var(--space-400);
+    background-color: var(--bg-clr);
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    padding: var(--padding-block) var(--padding-inline);
+    border-radius: 20px;
+    outline: 2px solid var(--outline-clr);
+    font-weight: var(--fw-bold);
+    transition: ease-in-out .25s;
+}
+
+.btn__primary {
+    --outline-clr: var(--clr-accent);
+    --bg-clr: var(--clr-accent);
+    color: initial;
+
+    &:is(:hover, :focus-visible) {
+        opacity: .9;
+    }
+} */
+
+/* .btn {
+    @include u.btn;
+} */
+
+/* .btn__secondary {
+    &:is(:hover, :focus-visible) {
+        --bg-clr: var(--clr-light);
+        color: var(--bg-2);
+    }
+} */
+
+.btn__primary {
+    @include u.btn(var(--clr-accent-100), var(--clr-accent-100), var(--clr-dark));
+
+    &:is(:hover, :focus-visible) {
+        opacity: .9;
+    }
+}
+
+.btn__secondary {
+    @include u.btn;
+
+    &:is(:hover, :focus-visible) {
+        background-color: var(--clr-light);
+        color: var(--bg-2);
+    }
+}
+
+
+

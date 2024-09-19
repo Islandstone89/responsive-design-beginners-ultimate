@@ -1,0 +1,21 @@
+
+@use '../globals/utilities' as u;
+
+.fw-feature {
+    background-color: var(--bg-3);
+    text-align: center;
+}
+
+.fw-feature__text {
+    max-width: 70ch;
+    margin-inline: auto;
+    
+    @include u.breakpoint(large) {
+        text-align: start;
+    }
+}
+
+.fw-feature__image {
+    --flow-space: var(--space-700);
+    margin-inline: auto;
+}
