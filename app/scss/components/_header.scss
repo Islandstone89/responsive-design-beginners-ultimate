@@ -97,7 +97,10 @@
     background-color: var(--bg-2);
     padding: var(--space-200) var(--space-600) var(--space-1000);
     border-radius: 0 0 20px;
-    outline: 2px solid red;
+    box-shadow: 0 12px 12px 0 var(--menu-shadow);
+    translate: 0 -105%;
+    /* translate: 0 0; */
+    transition: translate .5s ease-in-out;
 }
 
 :is(.navbar__menu__open, .navbar__menu__close) {
