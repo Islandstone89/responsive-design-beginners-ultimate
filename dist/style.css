@@ -132,6 +132,7 @@ textarea:not([rows]) {
   --gradient-3: var(--clr-aqua);
   --gradient-4: var(--clr-yellow);
   --menu-shadow: hsla(232, 58%, 35%, 60%);
+  --menu-overlay: hsla(233, 14%, 25%, 40%);
   --ff-primary: var(--ff-sans-serif);
   --fs-100: var(--size-14);
   --fs-200: var(--size-16);
@@ -323,6 +324,14 @@ h2 {
   }
 }
 
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: var(--space-500);
+}
+
 .logo {
   width: 4.375rem;
 }
@@ -334,14 +343,6 @@ h2 {
 .logo:is(:hover) {
   opacity: 0.9;
   transition: ease-in 0.25s;
-}
-
-.header__wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding-block: var(--space-500);
 }
 
 .header__link {
@@ -378,6 +379,13 @@ h2 {
   opacity: 1;
 }
 
+.navbar:has(.navbar__menu__open[aria-expanded=true]) .navbar__menu {
+  translate: 0 0;
+}
+.navbar:has(.navbar__menu__open[aria-expanded=true]) .navbar__menu__overlay {
+  opacity: 1;
+}
+
 .navbar__menu {
   position: fixed;
   inset: 0 0 auto auto;
@@ -391,8 +399,14 @@ h2 {
   border-radius: 0 0 20px;
   box-shadow: 0 12px 12px 0 var(--menu-shadow);
   translate: 0 -105%;
-  /* translate: 0 0; */
   transition: translate 0.5s ease-in-out;
+}
+
+.navbar__menu__overlay {
+  position: fixed;
+  inset: 0;
+  background-color: var(--menu-overlay);
+  pointer-events: none;
 }
 
 :is(.navbar__menu__open, .navbar__menu__close) {
@@ -402,7 +416,12 @@ h2 {
 }
 
 .navbar__menu__open {
-  display: none;
+  margin-inline-start: auto;
+}
+@media (width > 43.75rem) {
+  .navbar__menu__open {
+    display: none;
+  }
 }
 
 .navbar__menu__close {

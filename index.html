@@ -29,12 +29,15 @@
         
         <nav class="navbar">
             <span class="visually-hidden" id="nav-label">Navigation</span>
-            <button class="navbar__menu__open" aria-expanded="false" aria-labelledby="nav-label">
+
+            <div class="navbar__menu__overlay"></div>
+            
+            <button class="navbar__menu__open js-navbar__menu__open" aria-expanded="false" aria-labelledby="nav-label">
                 <img src="img/hamburger.svg" alt="" width="30" height="23" class="menu-icon">
             </button><!-- end navbar__menu__open -->
 
             <div class="navbar__menu" role="dialog" aria-labelledby="nav-label">
-                <button class="navbar__menu__close">
+                <button class="navbar__menu__close js-navbar__menu__close">
                     <img src="img/close-button.svg" alt="" width="26" height="26" class="menu-icon">
                 </button><!-- end navbar__menu__close -->
 
