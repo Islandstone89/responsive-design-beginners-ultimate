@@ -7,7 +7,7 @@
     grid-template-columns: 1fr;
     gap: var(--space-700);
 
-    @include u.breakpoint(large) {
+    @include u.breakpoint-up(large) {
         grid-template-columns: 1fr 1fr 1fr;
         gap: var(--space-900);
     }
@@ -20,7 +20,7 @@
     gap: var(--space-100);
     text-align: center;
 
-    @include u.breakpoint(large) {
+    @include u.breakpoint-up(large) {
         text-align: start;
         align-items: start;
     }

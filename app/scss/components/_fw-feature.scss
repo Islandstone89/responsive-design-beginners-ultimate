@@ -10,7 +10,7 @@
     max-width: 70ch;
     margin-inline: auto;
     
-    @include u.breakpoint(large) {
+    @include u.breakpoint-up(large) {
         text-align: start;
     }
 }

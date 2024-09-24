@@ -2,7 +2,7 @@
 @use '../globals/utilities' as u;
 
 .testimonial__wrapper {
-    @include u.breakpoint(large) {
+    @include u.breakpoint-up(large) {
         padding-inline: var(--space-1000);
     }
 }
@@ -20,7 +20,7 @@
 
 .testimonial__icon-1 {
     
-    @include u.breakpoint(xlarge) {
+    @include u.breakpoint-up(xlarge) {
         position: absolute;
         translate: calc(-100% - 40px) -30px;
     }
@@ -29,7 +29,7 @@
 .testimonial__icon-2 {
     display: none;
     
-    @include u.breakpoint(xlarge) {
+    @include u.breakpoint-up(xlarge) {
         display: block;
         position: absolute;
         left: calc(100% + 40px);
@@ -43,7 +43,7 @@
     align-items: center;
     gap: var(--space-600);
 
-    @include u.breakpoint(large) {
+    @include u.breakpoint-up(large) {
         flex-direction: row;
     }
 }
@@ -57,7 +57,7 @@
     line-height: 1.3;
     text-align: center;
 
-    @include u.breakpoint(large) {
+    @include u.breakpoint-up(large) {
         text-align: start;
     }
 }

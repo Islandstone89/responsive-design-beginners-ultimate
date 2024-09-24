@@ -18,7 +18,7 @@
     align-items: center;
     gap: var(--gap);
 
-    @include u.breakpoint(large) {
+    @include u.breakpoint-up(large) {
         flex-direction: row;
         --gap: var(--space-900);
 

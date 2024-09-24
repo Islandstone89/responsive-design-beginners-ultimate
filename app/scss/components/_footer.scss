@@ -18,7 +18,7 @@
     row-gap: var(--grid-row-gap);
     
 
-    @include u.breakpoint(large) {
+    @include u.breakpoint-up(large) {
         --columns: 1fr 1fr 1fr 1fr;
         --grid-column-gap: var(--space-800);
         --grid-row-gap: 0;

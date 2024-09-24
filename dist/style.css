@@ -317,6 +317,9 @@ h2 {
   background-color: var(--bg-2);
   font-size: clamp(var(--fs-100), 0.84rem + 0.18vw, var(--fs-200));
   letter-spacing: 0.05em;
+  position: sticky;
+  top: 0;
+  z-index: 9;
 }
 @media (width > 56.25rem) {
   .header {
@@ -343,10 +346,6 @@ h2 {
 .logo:is(:hover) {
   opacity: 0.9;
   transition: ease-in 0.25s;
-}
-
-.header__link {
-  display: none;
 }
 
 .navbar__list {
@@ -387,14 +386,16 @@ h2 {
 }
 
 .navbar__menu {
+  display: flex;
+  align-items: center;
+  gap: var(--space-700);
+  background-color: var(--bg-2);
+  /*  @include u.breakpoint-down(medium) */
+  flex-direction: column;
+  gap: var(--space-1000);
   position: fixed;
   inset: 0 0 auto auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-1000);
   width: 100%;
-  background-color: var(--bg-2);
   padding: var(--space-200) var(--space-600) var(--space-1000);
   border-radius: 0 0 20px;
   box-shadow: 0 12px 12px 0 var(--menu-shadow);
@@ -407,6 +408,7 @@ h2 {
   inset: 0;
   background-color: var(--menu-overlay);
   pointer-events: none;
+  opacity: 0;
 }
 
 :is(.navbar__menu__open, .navbar__menu__close) {
@@ -414,12 +416,8 @@ h2 {
   border: transparent;
   padding: 0;
 }
-
-.navbar__menu__open {
-  margin-inline-start: auto;
-}
 @media (width > 43.75rem) {
-  .navbar__menu__open {
+  :is(.navbar__menu__open, .navbar__menu__close) {
     display: none;
   }
 }
@@ -428,7 +426,7 @@ h2 {
   margin-inline-start: auto;
 }
 
-@media (width > 56.25rem) {
+@media (width > 43.75rem) {
   .home-link {
     display: none;
   }

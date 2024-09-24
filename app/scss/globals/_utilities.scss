@@ -3,15 +3,28 @@
 
 /* MIXINS */
 
-$breakpoints: (
+$breakpoints-up: (
     "medium": 43.75rem,
     "large": 56.25rem,
     "xlarge": 68.75rem,
     "xxlarge": 90rem,
 );
 
-@mixin breakpoint($size) {
-    @media (width > map-get($breakpoints, $size)) {
+$breakpoints-down: (
+    "medium": 43.74rem,
+    "large": 56.24rem,
+    "xlarge": 68.75rem,
+    "xxlarge": 89.99rem,
+);
+
+@mixin breakpoint-up($size) {
+    @media (width > map-get($breakpoints-up, $size)) {
+        @content;
+    }
+}
+
+@mixin breakpoint-down($size) {
+    @media (width > map-get($breakpoints-down, $size)) {
         @content;
     }
 }
@@ -48,7 +61,7 @@ $breakpoints: (
     margin-inline: auto;
     padding-block: var(--padding-block);
 
-    @include breakpoint(medium) {
+    @include breakpoint-up(medium) {
         --padding-inline: var(--space-600);
         --padding-block: var(--space-900);
     }

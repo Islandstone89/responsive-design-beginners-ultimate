@@ -23,8 +23,11 @@
     background-color: var(--bg-2);
     font-size: clamp(var(--fs-100), 0.84rem + 0.18vw, var(--fs-200));
     letter-spacing: .05em;
+    position: sticky;
+    top: 0;
+    z-index: 9;
 
-    @include u.breakpoint(large) {
+    @include u.breakpoint-up(large) {
         text-transform: uppercase;
     }
 }
@@ -42,7 +45,7 @@
 .logo {
     width: 4.375rem;
 
-    @include u.breakpoint(large) {
+    @include u.breakpoint-up(large) {
         width: 8rem;
     }
 
@@ -53,17 +56,13 @@
 }
 
 
-.header__link {
-    display: none;
-}
-
 .navbar__list {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
 
-    @include u.breakpoint(large) {
+    @include u.breakpoint-up(large) {
         flex-direction: row;
         gap: 40px;
     }
@@ -79,7 +78,7 @@
         opacity: 0;
         transition: ease-in .25s;
 
-        @include u.breakpoint(large) {
+        @include u.breakpoint-up(large) {
             display: block;
         }
     }
@@ -99,19 +98,24 @@
 }
 
 .navbar__menu {
-    position: fixed;
-    inset: 0 0 auto auto;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: var(--space-1000);
-    width: 100%;
+    gap: var(--space-700);
     background-color: var(--bg-2);
-    padding: var(--space-200) var(--space-600) var(--space-1000);
-    border-radius: 0 0 20px;
-    box-shadow: 0 12px 12px 0 var(--menu-shadow);
-    translate: 0 -105%;
-    transition: translate .5s ease-in-out;
+    
+
+   /*  @include u.breakpoint-down(medium) */ 
+        flex-direction: column;
+        gap: var(--space-1000);
+        position: fixed;
+        inset: 0 0 auto auto;
+        width: 100%;
+        padding: var(--space-200) var(--space-600) var(--space-1000);
+        border-radius: 0 0 20px;
+        box-shadow: 0 12px 12px 0 var(--menu-shadow);
+        translate: 0 -105%;
+        transition: translate .5s ease-in-out;
+    
 }
 
 .navbar__menu__overlay {
@@ -119,18 +123,15 @@
     inset: 0;
     background-color: var(--menu-overlay);
     pointer-events: none;
+    opacity: 0;
 }
 
 :is(.navbar__menu__open, .navbar__menu__close) {
     background-color: transparent;
     border: transparent;
     padding: 0;
-}
 
-.navbar__menu__open {
-    margin-inline-start: auto;
-    
-    @include u.breakpoint(medium) {
+    @include u.breakpoint-up(medium) {
         display: none;
     }
 }
@@ -140,7 +141,7 @@
 }
 
 .home-link {
-    @include u.breakpoint(large) {
+    @include u.breakpoint-up(medium) {
         display: none;
     }
 }
