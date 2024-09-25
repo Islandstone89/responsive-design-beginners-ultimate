@@ -12,10 +12,7 @@
     &:is(.dark){
         --testimonial-bg: var(--bg-2);
         --testimonial-text: var(--clr-light);
-
-        .testimonial__icon path {
-            --testimonial-icon: var(--clr-light-opacity);
-        }
+        --testimonial-icon: var(--clr-light-opacity);
     }
 }
 

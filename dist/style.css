@@ -134,6 +134,8 @@ textarea:not([rows]) {
   --menu-shadow: hsla(232, 58%, 35%, 60%);
   --menu-overlay: hsla(233, 14%, 25%, 40%);
   --clr-light-opacity: hsla(0, 0%, 100%, 50%);
+  --blog-gradient-1: var(--clr-dark-blue);
+  --blog-gradient-2: var(--clr-magenta);
   --ff-primary: var(--ff-sans-serif);
   --fs-100: var(--size-14);
   --fs-200: var(--size-16);
@@ -612,8 +614,6 @@ h2 {
 .testimonial:is(.dark) {
   --testimonial-bg: var(--bg-2);
   --testimonial-text: var(--clr-light);
-}
-.testimonial:is(.dark) .testimonial__icon path {
   --testimonial-icon: var(--clr-light-opacity);
 }
 
