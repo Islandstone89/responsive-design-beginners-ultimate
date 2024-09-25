@@ -133,6 +133,7 @@ textarea:not([rows]) {
   --gradient-4: var(--clr-yellow);
   --menu-shadow: hsla(232, 58%, 35%, 60%);
   --menu-overlay: hsla(233, 14%, 25%, 40%);
+  --clr-light-opacity: hsla(0, 0%, 100%, 50%);
   --ff-primary: var(--ff-sans-serif);
   --fs-100: var(--size-14);
   --fs-200: var(--size-16);
@@ -601,6 +602,21 @@ h2 {
   text-decoration: underline;
 }
 
+.testimonial {
+  --testimonial-bg: var(--bg-1);
+  --testimonial-text: var(--clr-dark);
+  --testimonial-icon: var(--clr-accent-100);
+  background-color: var(--testimonial-bg);
+  color: var(--testimonial-text);
+}
+.testimonial:is(.dark) {
+  --testimonial-bg: var(--bg-2);
+  --testimonial-text: var(--clr-light);
+}
+.testimonial:is(.dark) .testimonial__icon path {
+  --testimonial-icon: var(--clr-light-opacity);
+}
+
 @media (width > 56.25rem) {
   .testimonial__wrapper {
     padding-inline: var(--space-1000);
@@ -623,6 +639,10 @@ h2 {
     position: absolute;
     translate: calc(-100% - 40px) -30px;
   }
+}
+
+.testimonial__icon path {
+  fill: var(--testimonial-icon);
 }
 
 .testimonial__icon-2 {

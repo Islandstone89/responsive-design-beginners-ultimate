@@ -1,6 +1,24 @@
 
 @use '../globals/utilities' as u;
 
+.testimonial {
+    --testimonial-bg: var(--bg-1);
+    --testimonial-text: var(--clr-dark);
+    --testimonial-icon: var(--clr-accent-100);
+
+    background-color: var(--testimonial-bg);
+    color: var(--testimonial-text);
+
+    &:is(.dark){
+        --testimonial-bg: var(--bg-2);
+        --testimonial-text: var(--clr-light);
+
+        .testimonial__icon path {
+            --testimonial-icon: var(--clr-light-opacity);
+        }
+    }
+}
+
 .testimonial__wrapper {
     @include u.breakpoint-up(large) {
         padding-inline: var(--space-1000);
@@ -24,6 +42,10 @@
         position: absolute;
         translate: calc(-100% - 40px) -30px;
     }
+}
+
+.testimonial__icon path {
+    fill: var(--testimonial-icon);
 }
 
 .testimonial__icon-2 {
