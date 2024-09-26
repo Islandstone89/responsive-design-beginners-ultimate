@@ -705,7 +705,7 @@ h2 {
   grid-template-rows: auto;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 4px 0 gvar(--blog-box-shadow);
+  box-shadow: 0 4px 4px 0 var(--blog-box-shadow);
 }
 
 .blog__image {
@@ -733,6 +733,7 @@ h2 {
   grid-row: 1/-1;
   align-self: center;
   isolation: isolate;
+  margin-block: 50px;
 }
 
 .blog__title {
