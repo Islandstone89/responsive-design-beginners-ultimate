@@ -358,7 +358,7 @@ h2 {
   align-items: center;
   gap: 20px;
 }
-@media (width > 56.25rem) {
+@media (width > 43.75rem) {
   .navbar__list {
     flex-direction: row;
     gap: 40px;
@@ -391,34 +391,41 @@ h2 {
 
 .navbar__menu {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: var(--space-700);
   background-color: var(--bg-2);
-  /*  @include u.breakpoint-down(medium) */
-  flex-direction: column;
-  gap: var(--space-1000);
-  position: fixed;
-  inset: 0 0 auto auto;
-  width: 100%;
-  padding: var(--space-200) var(--space-600) var(--space-1000);
-  border-radius: 0 0 20px;
-  box-shadow: 0 12px 12px 0 var(--menu-shadow);
-  translate: 0 -105%;
-  transition: translate 0.5s ease-in-out;
+}
+@media (width < 43.74rem) {
+  .navbar__menu {
+    flex-direction: column;
+    gap: var(--space-1000);
+    position: fixed;
+    inset: 0 0 auto auto;
+    width: 100%;
+    padding: var(--space-200) var(--space-600) var(--space-1000);
+    border-radius: 0 0 20px;
+    box-shadow: 0 12px 12px 0 var(--menu-shadow);
+    translate: 0 -105%;
+    transition: translate 0.5s ease-in-out;
+  }
 }
 
-.navbar__menu__overlay {
-  position: fixed;
-  inset: 0;
-  background-color: var(--menu-overlay);
-  pointer-events: none;
-  opacity: 0;
+@media (width < 43.74rem) {
+  .navbar__menu__overlay {
+    position: fixed;
+    inset: 0;
+    background-color: var(--menu-overlay);
+    pointer-events: none;
+    opacity: 0;
+  }
 }
 
 :is(.navbar__menu__open, .navbar__menu__close) {
   background-color: transparent;
   border: transparent;
   padding: 0;
+  cursor: pointer;
 }
 @media (width > 43.75rem) {
   :is(.navbar__menu__open, .navbar__menu__close) {
